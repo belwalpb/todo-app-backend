@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class TodosController {
 
     @Autowired
@@ -21,7 +22,8 @@ public class TodosController {
 
     @GetMapping("/get-todos")
     public List<Todos> getTodos() {
-    return service.getAllTodos();
+        System.out.println("Get todos API Called");
+        return service.getAllTodos();
     }
 
     @DeleteMapping("/delete-todo/{id}")
